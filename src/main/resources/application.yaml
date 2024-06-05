@@ -1,0 +1,29 @@
+server:
+    servlet:
+        context-path: /api
+    port: 8080
+    shutdown: graceful
+    max-http-request-header-size: 64000
+
+spring:
+    application:
+        name: camel-activemq-test
+    output:
+        ansi:
+            enabled: always
+    activemq:
+        broker-url: tcp://localhost:61616
+        user: admin
+        password: admin
+        packages:
+            trust-all: true
+
+application:
+    activemq:
+        enabled: true
+
+camel:
+    springboot:
+        name: ${spring.application.name}
+
+
